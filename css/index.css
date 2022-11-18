@@ -8,7 +8,7 @@
     --background-header-footer: #414141;
     --background-text: #FFFFFF;
     --hover-card: #222222;
-    --hover-link: #D9D9D9;
+    --hover-link: #696969;
 
     /* Font Sizes */
 
@@ -36,16 +36,26 @@
 
 html {
     font-size: 62.5%;
+    height: 100%;
 }
 
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: black;
     color: white;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     padding: 0 var(--spacing-lg) 0 var(--spacing-lg);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
 }
 
 section {
@@ -71,6 +81,7 @@ h1 {
     text-transform: uppercase;
     color: white;
     padding: 1rem 0 1rem 0;
+    cursor: default;
 }
 
 h2 {
@@ -93,13 +104,35 @@ h2 {
     text-transform: uppercase;
     text-decoration: none;
     color: white;
+    transition: all .7s;
 }
 
 .menu__items, .menu__social {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: var(--spacing-md);
+    
+}
+
+.menu__items a {
+    padding: 1.65rem;
+    transition: all 0.5s;
+}
+
+.menu__items a:hover {
+    background-color: var(--hover-link);
+}
+
+.menu__social {
+    gap: 2rem;
+}
+
+.menu__social i {
+    transition: all 0.4s;
+}
+
+.menu__social i:hover {
+    transform: scale(1.4);
 }
 
 /* CARDS */
@@ -123,8 +156,8 @@ h2 {
 }
 
 img {
-    width: 100%;
-    height: 100%;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     border-radius: .3rem;
 }
@@ -199,6 +232,8 @@ footer {
     background-color: var(--background-header-footer);
     font-size: var(--font-sm);
     text-align: center;
+    text-transform: uppercase;
+    margin-top: auto;
 }
 
 footer span {
